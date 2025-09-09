@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auktion – Turbochargers Shop</title>
+
+<!-- Minimaler CSS nur für die Sub-Tabs „Regeneration“ (notwendig für :checked) -->
+<style>
+#reg-blok-1 input[name="tabs-regen"]{display:none}
+#reg-blok-1 .panel-sub{display:none}
+#reg-blok-1 #st1:checked ~ .subtabs .sl1,
+#reg-blok-1 #st2:checked ~ .subtabs .sl2,
+#reg-blok-1 #st3:checked ~ .subtabs .sl3{
+  background:#ffffff;color:#0b3f7a
+}
+#reg-blok-1 #st1:checked ~ .subpanels #sp1{display:block}
+#reg-blok-1 #st2:checked ~ .subpanels #sp2{display:block}
+#reg-blok-1 #st3:checked ~ .subpanels #sp3{display:block}
+</style>
+</head>
+<body style="margin:0;padding:16px;background:#f5f5f5;color:#000;font-family:Arial,Helvetica,sans-serif;line-height:1.5;">
+
+<!-- ====== EIN GEMEINSAMER CONTAINER ====== -->
+<div style="max-width:1000px;margin:0 auto;background:#ffffff;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.08);overflow:hidden;">
+
+  <!-- HEADER -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+    <tr style="background:#ffffff;">
+      <td style="padding:16px;" align="left">
+        <img src="https://markoooss.github.io/qrp-cdn/logo.png" alt="Turbochargers Shop" style="max-width:220px;height:auto;display:block;">
+      </td>
+      <td style="padding:16px;" align="right">
+        <table cellpadding="0" cellspacing="0" style="font-size:16px;font-weight:600;color:#333;letter-spacing:.5px;font-family:Arial,Helvetica,sans-serif;">
+          <tr>
+            <td style="padding-left:22px;">
+              <a href="#auktionen" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">AUKTIONEN</a>
+            </td>
+            <td style="padding-left:22px;">
+              <a href="#bewertungen" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">BEWERTUNGEN</a>
+            </td>
+            <td style="padding-left:22px;">
+              <a href="#shop" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">SHOP</a>
+            </td>
+            <td style="padding-left:22px;">
+              <a href="#ueberuns" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">ÜBER UNS</a>
+            </td>
+            <td style="padding-left:22px;">
+              <a href="#kontakt" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">KONTAKT</a>
+            </td>
+            <td style="padding-left:22px;">
+              <a href="#eco" style="text-decoration:none;color:#333;display:inline-block;padding:4px 0;">ECO</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- HERO -->
+    <tr id="angebot">
+      <td colspan="2" style="padding:16px 16px 8px 16px;background:#ffffff;" align="center">
+        <img src="https://markoooss.github.io/qrp-cdn/Baner3.png" alt="Turbochargers Shop Banner" style="width:100%;max-width:1000px;border-radius:14px;display:block;">
+      </td>
+    </tr>
+  </table>
+
+  <!-- ÜBER UNS (Bild links, Text rechts) -->
+  <div id="ueberuns" style="padding:18px 16px;background:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+      <tr>
+        <td width="20%" valign="top" style="padding:6px 10px;">
+          <img src="https://markoooss.github.io/qrp-cdn/BEFORE (2).png"
+               alt="Maschinenpark"
+               style="width:100%;height:auto;border-radius:10px;display:block;">
+        </td>
+        <td width="70%" valign="middle" style="padding:6px 10px;">
+          <div style="font-size:20px;font-weight:800;color:#0b3f7a;margin:4px 0 8px 0;">Setzen Sie auf Profis!</div>
+          <div style="font-size:14px;color:#333;line-height:1.7;">
+            Wir sind ein modernes und dynamisch wachsendes Unternehmen mit internationaler Reichweite,
+            das sich auf die Regeneration und den Verkauf von Turboladern spezialisiert hat. Wir bieten
+            professionell regenerierte Turbolader auf Basis eines hochmodernen Maschinenparks und Teile in
+            höchster Qualität.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- KAUTIONSYSTEM (ohne Kacheln) -->
+  <div id="kaution" style="padding:10px 16px 8px 16px;background:#ffffff;color:#000;">
+    <div style="text-align:center;padding:12px 0 6px 0;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:.4px;color:#004d99;">Wie funktioniert das Kautionssystem?</div>
+      <div style="font-size:13px;color:#555;margin-top:6px;">Schnell, einfach und ohne Risiko</div>
+    </div>
+
+    <!-- 4 Schritte -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:8px;">
+      <tr>
+        <td style="width:25%;padding:10px;vertical-align:top;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#004d99;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">1</div>
+          <img src="https://markoooss.github.io/qrp-cdn/buy_icon.png" alt="Kauf" style="max-width:72px;height:auto;margin:6px auto 10px auto;display:block;">
+          <div style="font-weight:700;font-size:14px;color:#1a1d21;">KAUF</div>
+          <div style="font-size:12px;color:#555;line-height:1.6;margin-top:4px;">Zum Preis wird eine <strong>Kaution</strong> hinzugefügt.</div>
+        </td>
+
+        <td style="width:25%;padding:10px;vertical-align:top;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#004d99;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">2</div>
+          <img src="https://markoooss.github.io/qrp-cdn/Zwrocik.png" alt="Rücksendung" style="max-width:72px;height:auto;margin:6px auto 10px auto;display:block;">
+          <div style="font-weight:700;font-size:14px;color:#1a1d21;">RÜCKSENDUNG</div>
+          <div style="font-size:12px;color:#555;line-height:1.6;margin-top:4px;">Sie senden den alten Turbolader im Karton der neuen Einheit zurück.</div>
+        </td>
+
+        <td style="width:25%;padding:10px;vertical-align:top;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#004d99;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">3</div>
+          <img src="https://markoooss.github.io/qrp-cdn/check_icon.png" alt="Prüfung" style="max-width:72px;height:auto;margin:6px auto 10px auto;display:block;">
+          <div style="font-weight:700;font-size:14px;color:#1a1d21;">PRÜFUNG</div>
+          <div style="font-size:12px;color:#555;line-height:1.6;margin-top:4px;">Wir bewerten Vollständigkeit und Regenerierbarkeit.</div>
+        </td>
+
+        <td style="width:25%;padding:10px;vertical-align:top;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#004d99;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">4</div>
+          <img src="https://markoooss.github.io/qrp-cdn/kaucja_icon.png" alt="Kautionsrückzahlung" style="max-width:72px;height:auto;margin:6px auto 10px auto;display:block;">
+          <div style="font-weight:700;font-size:14px;color:#1a1d21;">KAUTIONSRÜCKZAHLUNG</div>
+          <div style="font-size:12px;color:#555;line-height:1.6;margin-top:4px;">Nach erfolgreicher Prüfung erstatten wir die Kaution auf demselben Zahlungsweg.</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Infobalken -->
+    <div style="background:#eef5ff;border-radius:10px;padding:12px 16px;max-width:860px;margin:10px auto;font-size:13px;color:#0f2942;">
+      <strong>Beispiel:</strong> Turbolader 300 EUR + Kaution 100 EUR → nach Prüfung erstatten wir <strong>100 EUR</strong>.
+    </div>
+    <div style="background:#eef5ff;border-radius:10px;padding:12px 16px;max-width:860px;margin:10px auto;font-size:13px;color:#0f2942;">
+      <strong>Frist für die Rücksendung des Altteils:</strong> 14 Werktage ab Zustellung.
+    </div>
+    <div style="background:#eef5ff;border-radius:10px;padding:12px 16px;max-width:860px;margin:10px auto;font-size:13px;color:#0f2942;">
+      <strong>Zustand des Altteils:</strong> vollständig, ohne Risse, nicht verbrannt, original. Annahmebedingungen werden individuell festgelegt.
+    </div>
+    <div style="background:#dbeafe;border-radius:10px;padding:12px 16px;max-width:860px;margin:12px auto;font-size:13px;color:#0b3f7a;">
+      <strong>Empfehlung:</strong> Die Kaution bitte via <strong>PayPal</strong> überweisen – schnellste Erstattung und Abrechnung. <br>
+      <strong>Betreff bei PayPal:</strong> Bestellnummer + Vor- und Nachname + eBay (z. B. <em>Order #12345 • Max Mustermann • eBay</em>).
+    </div>
+  </div>
+
+<style>
+/* Inputs und Panels ausblenden */
+#reg-blok-1 input[name="tabs-regen"]{display:none}
+#reg-blok-1 .panel-sub{display:none}
+
+/* Aktiver Tab – weißer Hintergrund, dunkelblauer Text (überstimmt inline) */
+#reg-blok-1 #st1:checked ~ .subtabs .sl1,
+#reg-blok-1 #st2:checked ~ .subtabs .sl2,
+#reg-blok-1 #st3:checked ~ .subtabs .sl3{
+  background:#ffffff !important;
+  color:#0b3f7a !important;
+  border:1px solid #d9e6ff;
+  border-bottom-color:#ffffff;
+  border-radius:8px 8px 0 0;
+  font-weight:800;
+  position:relative; z-index:2;
+}
+
+/* Sichtbares Panel für aktiven Tab */
+#reg-blok-1 #st1:checked ~ .subpanels #sp1{display:block}
+#reg-blok-1 #st2:checked ~ .subpanels #sp2{display:block}
+#reg-blok-1 #st3:checked ~ .subpanels #sp3{display:block}
+
+/* Panel-Rahmen (Verbinder mit aktivem Tab) */
+#reg-blok-1 .subpanels{
+  border:1px solid #d9e6ff; border-top:none;
+  border-radius:0 0 8px 8px; background:#ffffff;
+}
+</style>
+
+<!-- ====== REGENERATION: Bild LINKS + Text RECHTS + 3 Tabs ====== -->
+<div id="reg-blok-1" style="padding:18px 16px;background:#ffffff;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <!-- OBERER TEIL: Bild links + Text rechts -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+      <tr>
+        <td width="42%" valign="top" style="padding:6px 10px;">
+          <img src="https://markoooss.github.io/qrp-cdn/1.png"
+               alt="Regeneration von Turboladern"
+               style="width:100%;height:auto;border-radius:10px;display:block;">
+        </td>
+        <td width="58%" valign="middle" style="padding:6px 10px;">
+          <div style="font-size:12px;color:#0b3f7a;letter-spacing:.6px;text-transform:uppercase;margin:2px 0 6px 0;">
+            REGENERATION
+          </div>
+          <div style="font-size:18px;font-weight:800;color:#0b3f7a;margin:0 0 8px 0;">
+            Höchste Qualität!
+          </div>
+          <div style="font-size:13px;color:#333;line-height:1.7;">
+            Wir sind stolz darauf, dass unsere Turbolader Produkte von höchster Qualität sind und internationale
+            Standards erfüllen. In unseren Lagern führen wir nahezu alle Turbolader-Typen für Pkw, Transporter,
+            Lkw sowie Bau- und Landmaschinen.
+          </div>
+
+          <!-- ✅ HINZUGEFÜGT: 3 USP-Karten unter dem Text -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                 style="border-collapse:separate;border-spacing:10px;text-align:center;margin-top:14px;">
+            <tr>
+              <td width="33.33%" valign="top" style="padding:0;">
+                <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+                  <img src="https://markoooss.github.io/qrp-cdn/13.png" alt="Garantie"
+                       style="width:64px;height:auto;margin:0 auto 10px;display:block;">
+                  <div style="font-size:13px;font-weight:700;color:#0b3f7a;">24 Monate Garantie</div>
+                  <div style="font-size:11px;color:#555;">Ohne Kilometerbegrenzung</div>
+                </div>
+              </td>
+              <td width="33.33%" valign="top" style="padding:0;">
+                <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+                  <img src="https://markoooss.github.io/qrp-cdn/155.png" alt="Kostenloser Versand"
+                       style="width:64px;height:auto;margin:0 auto 10px;display:block;">
+                  <div style="font-size:13px;font-weight:700;color:#0b3f7a;">Kostenloser Versand</div>
+                  <div style="font-size:11px;color:#555;">Innerhalb von 24 Stunden</div>
+                </div>
+              </td>
+              <td width="33.33%" valign="top" style="padding:0;">
+                <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+                  <img src="https://markoooss.github.io/qrp-cdn/16.png" alt="Montagesatz"
+                       style="width:64px;height:auto;margin:0 auto 10px;display:block;">
+                  <div style="font-size:13px;font-weight:700;color:#0b3f7a;">Montagesatz</div>
+                  <div style="font-size:11px;color:#555;">+ Dichtungen gratis</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- 🔚 ENDE USP -->
+        </td>
+      </tr>
+    </table>
+
+    <!-- Abstand -->
+    <div style="height:12px;"></div>
+
+    <!-- SUB-TABS (radio + label) -->
+    <input type="radio" name="tabs-regen" id="st1" checked>
+    <input type="radio" name="tabs-regen" id="st2">
+    <input type="radio" name="tabs-regen" id="st3">
+
+    <!-- TAB-LEISTE -->
+    <div class="subtabs" style="display:flex;background:#0b3f7a;border-radius:8px 8px 0 0;overflow:hidden; margin-top:50px;">
+      <label for="st1" class="sl1" style="flex:1;text-align:center;cursor:pointer;padding:12px 10px;font-weight:700;color:#fff;border-right:1px solid rgba(255,255,255,.15);min-height:44px;display:flex;align-items:center;justify-content:center;">
+        MASCHINENPARK
+      </label>
+      <label for="st2" class="sl2" style="flex:1;text-align:center;cursor:pointer;padding:12px 10px;font-weight:700;color:#fff;border-right:1px solid rgba(255,255,255,.15);min-height:44px;display:flex;align-items:center;justify-content:center;">
+        MASCHINENPROTOKOLLE
+      </label>
+      <label for="st3" class="sl3" style="flex:1;text-align:center;cursor:pointer;padding:12px 10px;font-weight:700;color:#fff;min-height:44px;display:flex;align-items:center;justify-content:center;">
+       ORIGINALTEILE
+      </label>
+    </div>
+
+    <!-- PANELS -->
+    <div class="subpanels" style="border:1px solid #d9e6ff;border-top:none;border-radius:0 0 8px 8px;overflow:hidden;background:#ffffff;">
+
+      <!-- MASCHINENPARK -->
+      <div id="sp1" class="panel-sub" style="padding:16px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="20%" valign="top" style="padding:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/parkmaszyn.jpg"
+                   alt="Maschinenpark – Teststände"
+                   style="width:100%;height:auto;display:block;border-radius:10px;">
+            </td>
+            <td width="58%" valign="top" style="padding:12px;">
+              <div style="font-size:14px;font-weight:800;color:#0b3f7a;margin-bottom:6px;">Professionelle technologische Basis</div>
+              <div style="font-size:13px;color:#333;line-height:1.7;">
+                Sie ermöglicht uns, den Turbolader so zu testen und einzustellen, dass die Endqualität dem Original entspricht.
+                Wir verwenden Maschinen namhafter Hersteller, deren Technologie auch in der Produktion neuer Turbolader eingesetzt wird.
+                Wir verfügen über Herstellerzertifikate für Maschinenfunktion und geschultes Personal.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- MASCHINENPROTOKOLLE -->
+      <div id="sp2" class="panel-sub" style="padding:16px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="20%" valign="top" style="padding:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/Qualit.png"
+                   alt="Maschinenausdrucke – Wuchten, Dichtheit, Kalibrierung"
+                   style="width:100%;height:auto;display:block;border-radius:10px;">
+            </td>
+            <td width="58%" valign="top" style="padding:12px;">
+              <div style="font-size:14px;font-weight:800;color:#0b3f7a;margin-bottom:6px;">Vollständige Testdokumentation</div>
+              <div style="font-size:13px;color:#333;line-height:1.7;">
+                Jeder Turbolader wird mit Ausdruck(en) der Maschinen ausgeliefert, die die höchste Servicequalität bestätigen.
+                Jedes CHRA wird vollständig gewuchtet und auf Dichtheit geprüft. Bei VTG-Turboladern
+                stellen wir den Abgasfluss (VNT) sowie die Funktion des Aktuators/elektronischen Steuergeräts ein.
+                Dazu nutzen wir 3 Maschinen und 3 Kontrollgeräte.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ORIGINALTEILE -->
+      <div id="sp3" class="panel-sub" style="padding:16px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="20%" valign="top" style="padding:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/hybrydy.png"
+                   alt="Originalteile und Premium-Ersatzteile"
+                   style="width:100%;height:auto;display:block;border-radius:10px;">
+            </td>
+            <td width="58%" valign="top" style="padding:12px;">
+              <div style="font-size:14px;font-weight:800;color:#0b3f7a;margin-bottom:6px;">Komponenten in OEM/Premium-Qualität</div>
+              <div style="font-size:13px;color:#333;line-height:1.7;">
+                Entscheidend ist der Einsatz hochwertigster Teile. Die Kombination aus modernen Maschinen,
+                qualifiziertem Personal und OEM/Premium-Komponenten liefert Ergebnisse, die die Erwartungen
+                der anspruchsvollsten Kunden erfüllen. Wir verwenden Originalteile oder Ersatzteile namhafter Hersteller.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div> <!-- /subpanels -->
+  </div>
+</div>
+<!-- ====== /REGENERATION ====== -->
+
+<!-- ====== ECO – Überschrift + Einleitung ====== -->
+<div id="eco" style="padding:0 16px 6px 16px;background:#ffffff;">
+  <div style="max-width:860px;margin:0 auto 10px auto;text-align:center;font-family:Arial,Helvetica,sans-serif;">
+    <div style="font-size:20px;font-weight:800;color:#0b3f7a;">
+      Wir handeln nicht nur ökonomisch, sondern ökologisch!
+    </div>
+    <div style="font-size:13px;color:#555;line-height:1.7;margin-top:6px;">
+      Die Regeneration von Turboladern reduziert Abfallmenge und Rohstoffverbrauch und senkt die CO₂-Emissionen aus der Neuteileproduktion.
+      Sie verlängert den Lebenszyklus von Komponenten und unterstützt die Kreislaufwirtschaft. Eine ökologische und günstigere Lösung für Fahrer.
+    </div>
+  </div>
+</div>
+
+<!-- REIHE 1: Bild LINKS + 3 CO₂-Karten RECHTS -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse; margin-top: 6px; margin-bottom:16px;font-family:Arial,Helvetica,sans-serif;">
+  <tr>
+    <!-- LINKS: Bild -->
+    <td width="42%" valign="top" style="padding:0 12px 12px 12px;">
+      <div style="background:#ffffff;border:1px solid #e9eef6;border-radius:12px;padding:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);">
+        <img src="https://markoooss.github.io/qrp-cdn/BEFORE (1).png" alt="Turbolader – Beispiel"
+             style="width:100%;height:auto;border-radius:10px;display:block;">
+      </div>
+      <div style="font-size:11px;color:#555;margin-top:6px;text-align:center;"></div>
+    </td>
+
+    <!-- RECHTS: 3 CO₂-Karten -->
+    <td width="58%" valign="top" style="padding:0 12px 12px 12px;">
+      <!-- NEW -->
+      <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);margin-bottom:16px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="64" valign="top" style="padding-right:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/new2_icon.png" alt="Neuproduktion"
+                   style="width:54px;height:auto;display:block;">
+            </td>
+            <td valign="top" style="font-size:13px;color:#333;line-height:1.55;">
+              <div style="font-weight:800;color:#0f2942;margin-bottom:6px;">NEW — Neuproduktion</div>
+              <div style="font-size:12px;color:#555;">Material: <strong>6&nbsp;500&nbsp;g</strong> • Energie: <strong>4&nbsp;200&nbsp;Wh</strong></div>
+              <div style="font-size:13px;font-weight:800;color:#b30000;margin-top:2px;">CO₂: 50&nbsp;000&nbsp;g</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- REMAN -->
+      <div style="background:#ecf9f4;border:1px solid #caefe1;border-radius:12px;padding:18px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);margin-bottom:16px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="64" valign="top" style="padding-right:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/recycle2_icon.png" alt="Regeneration"
+                   style="width:54px;height:auto;display:block;">
+            </td>
+            <td valign="top" style="font-size:13px;color:#0b5b4a;line-height:1.55;">
+              <div style="font-weight:800;margin-bottom:6px;">REMAN — Regenerationsprozess</div>
+              <div style="font-size:12px;">Material: <strong>2&nbsp;300&nbsp;g</strong> • Energie: <strong>700&nbsp;Wh</strong></div>
+              <div style="font-size:13px;font-weight:800;margin-top:2px;">CO₂: 12&nbsp;500&nbsp;g</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- SAVED -->
+      <div style="background:#dffcf1;border:1px solid #b9f2df;border-radius:12px;padding:18px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="64" valign="top" style="padding-right:12px;">
+              <img src="https://markoooss.github.io/qrp-cdn/eco2_icon.png" alt="Einsparungen"
+                   style="width:54px;height:auto;display:block;">
+            </td>
+            <td valign="top" style="font-size:13px;color:#0d6b41;line-height:1.55;">
+              <div style="font-weight:800;margin-bottom:6px;">SAVED — Umwelteinsparungen</div>
+              <div style="font-size:12px;">Material: <strong>−4&nbsp;200&nbsp;g</strong> • Energie: <strong>−3&nbsp;500&nbsp;Wh</strong></div>
+              <div style="font-size:13px;font-weight:800;margin-top:2px;">CO₂: −37&nbsp;500&nbsp;g</div>
+            </td>
+          </tr>
+        </table>
+		
+      </div>
+      <div style="font-size:11px;color:#555;text-align:center;margin-top:6px;"> Richtwerte für Produktion/Regeneration von 1 Stück — Einsparungen variieren je nach Turbolader-Modell und Umfang der Regeneration.</div>
+    </td>
+  </tr>
+</table>
+
+
+  <!-- REIHE 2: 3 „Wir sind eco“-Karten LINKS + Bild RECHTS -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+  <tr>
+    <!-- LINKS: 3 eco Karten -->
+    <td width="58%" valign="top" style="padding:0 12px 12px 12px;">
+      <!-- Karte 1 -->
+      <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);margin-bottom:45px;">
+        <div style="font-weight:700;font-size:15px;color:#0f2942;margin-bottom:6px;">UMWELTSCHUTZ – MINIMIERUNG VON KUNSTSTOFF</div>
+        <div style="font-size:13px;color:#444;line-height:1.6;">
+          Für das Verpacken der Turbolader verwenden wir umweltfreundliche Materialien, die zu 100% <strong>recycelbar und biologisch abbaubar</strong> sind.
+        </div>
+      </div>
+
+      <!-- Karte 2 -->
+      <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);margin-bottom:45px;">
+        <div style="font-weight:700;font-size:15px;color:#0f2942;margin-bottom:6px;">ECO-FÜLLMATERIAL</div>
+        <div style="font-size:13px;color:#444;line-height:1.6;">
+          Zum Ausfüllen der Pakete nutzen wir Spezialpapier, das zu 100% aus Recyclingmaterial besteht.
+        </div>
+      </div>
+
+      <!-- Karte 3 -->
+      <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;
+                  box-shadow:0 2px 6px rgba(0,0,0,.05);">
+        <div style="font-weight:700;font-size:15px;color:#0f2942;margin-bottom:6px;">PAPIERKLEBEBAND</div>
+        <div style="font-size:13px;color:#444;line-height:1.6;">
+          Wir verwenden Klebeband aus Pergamentpapier mit Kleber auf Kartoffelstärkebasis.
+        </div>
+      </div>
+    </td>
+
+    <!-- RECHTS: Bild -->
+    <td width="25%" valign="top" style="padding:0 12px 12px 12px;">
+      <div style="background:#ffffff;border:1px solid #e9eef6;border-radius:12px;padding:8px;
+                  box-shadow:0 2px 8px rgba(0,0,0,.08);">
+        <img src="https://markoooss.github.io/qrp-cdn/ECO2.png"
+             alt="Füllmaterial-Maschine" style="width:100%;height:auto;border-radius:10px;display:block;">
+      </div>
+      
+    </td>
+  </tr>
+</table>
+
+
+ <!-- ====== FAQ (gleich hohe Karten) ====== -->
+<table id="faq" width="100%" cellpadding="0" cellspacing="0"
+       style="max-width:1000px;margin:auto;font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;background:#ffffff;color:#000;">
+  <tr>
+    <td align="center" style="padding:28px 16px 12px 16px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:.4px;color:#004d99;">Häufig gestellte Fragen (FAQ)</div>
+      <div style="font-size:13px;color:#555;margin-top:6px;">Die wichtigsten Infos auf einen Blick</div>
+    </td>
+  </tr>
+
+  <!-- ZEILE 1 -->
+  <tr>
+    <td style="padding:8px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Ist die Kaution verpflichtend und wie funktioniert sie?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+                Zum Preis des Turboladers addieren wir eine <strong>erstattbare Kaution</strong>. Nach dem Einbau senden Sie den alten Turbolader zurück und nach positiver Prüfung
+                <strong>erstatten wir 100%</strong> über dieselbe Zahlungsmethode (in der Regel 2–3 Werktage).
+              </div>
+            </div>
+          </td>
+		  
+		  <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Muss ich den alten Turbolader zurückgeben?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+               Die Rückgabe ist nicht zwingend, aber ohne Rückgabe erfolgt keine Erstattung der Kaution.
+              </div>
+            </div>
+          </td>
+		  
+        </tr>
+
+        <!-- ZEILE 2 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Wie schnell versenden Sie Bestellungen?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+                Die meisten Bestellungen versenden wir innerhalb von <strong>24 h</strong>. Die Sendungsnummer erhalten Sie per E-Mail. 
+              </div>
+            </div>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Wie finde ich das richtige Produkt?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+                Sind Sie unsicher, ob ein Produkt zu Ihrem Fahrzeug passt, kontaktieren Sie uns – unser Team hilft Ihnen, den passenden Turbolader zu wählen.
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ZEILE 3 -->
+        <tr>
+          <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Sind neue Dichtungen im Set enthalten?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+                Ja — jeder Turbolader wird mit einem <strong>kompletten Satz neuer Dichtungen</strong> geliefert.
+              </div>
+            </div>
+          </td>
+          <td width="50%" valign="top" style="padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:18px;min-height:150px;box-shadow:0 2px 6px rgba(0,0,0,.05);">
+              <div style="font-weight:800;font-size:16px;color:#004d99;margin-bottom:6px;">Wie viel Zeit habe ich für die Rücksendung?</div>
+              <div style="font-size:13px;color:#555;line-height:1.6;">
+                <strong>14 Werktage</strong> ab Zustellung. Benötigen Sie ein Rücksendeetikett? – Schreiben Sie uns.
+              </div>
+            </div>
+          </td>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+  <!-- CTA (als Band im selben Container) -->
+  <div style="padding:24px 16px;background:#0b3f7a;color:#fff;text-align:center;">
+    <div style="font-size:22px;font-weight:900;letter-spacing:.4px;line-height:1.3;">Über <span style="color:#79c0ff;">3000</span> Turbolader sofort verfügbar</div>
+    
+    <a href="https://de.turbochargers-shop.com/"
+       style="display:inline-block;margin-top:14px;background:#ffffff;color:#0b3f7a;text-decoration:none;font-weight:800;font-size:14px;padding:12px 20px;border-radius:999px;">
+      🔎 Angebot ansehen
+    </a>
+  </div>
+
+  <!-- KONTAKT (3 Spalten, ohne Kacheln) -->
+  <div id="kontakt" style="padding:16px;background:#ffffff;color:#000;">
+    
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+      <tr>
+       
+
+        <td style="width:50%;padding:8px;vertical-align:top;text-align:center;">
+          <div style="font-weight:800;color:#004d99;margin-bottom:4px;">📧 E-Mail</div>
+          <div style="font-size:14px;color:#0f2942;font-weight:700;word-break:break-word;">info@turbochargers-shop.com</div>
+          <div style="font-size:12px;color:#555;margin-top:4px;">Wir antworten in der Regel innerhalb von 1–3 Stunden</div>
+        </td>
+
+        <td style="width:50%;padding:8px;vertical-align:top;text-align:center;">
+          <div style="font-weight:800;color:#004d99;margin-bottom:4px;">📦 Versandadresse</div>
+          <div style="font-size:12px;color:#0f2942;line-height:1.5;">TURBOSHOP POLSKA<br>ul. Bratnia 8, 56-040 Oleśnica</div>
+        </td>
+      </tr>
+    </table>
+
+    <div style="background:#eef5ff;border-radius:10px;padding:10px 14px;max-width:860px;margin:12px auto;font-size:12px;color:#0f2942;text-align:center;">
+      Benötigen Sie ein Rücksendeetikett? Schreiben Sie uns – wir senden es per E-Mail. Versand innerhalb von 24 h.
+    </div>
+  </div>
+
+</div>
+<!-- ====== /EIN GEMEINSAMER CONTAINER ====== -->
+
+</body>
+</html>

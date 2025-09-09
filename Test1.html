@@ -1,0 +1,545 @@
+<!-- ========== AUKCJA – SZABLON V3 (radio-tabs, eBay-safe) ========== -->
+<meta charset="utf-8">
+<style>
+/* radio-tabs (eBay-safe) – ukrywamy inputy i panele, pokazujemy wybrany */
+.au input[type=radio]{display:none}
+.au .panel{display:none}
+
+/* Sekcja #1: prawa kolumna – aktywna etykieta */
+#tab-opis:checked  ~ .tabs-1 .l-opis,
+#tab-pojazd:checked~ .tabs-1 .l-pojazd,
+#tab-oem:checked   ~ .tabs-1 .l-oem{
+  background:#ffffff !important;color:#0b3f7a !important;border:1px solid #d9e6ff;
+  border-bottom-color:#ffffff;border-radius:10px 10px 0 0
+}
+#tab-opis:checked  ~ .panels-1 #p-opis{display:block}
+#tab-pojazd:checked~ .panels-1 #p-pojazd{display:block}
+#tab-oem:checked   ~ .panels-1 #p-oem{display:block}
+
+/* Sekcja #3: dolne zakładki – aktywna etykieta */
+#tab-eco:checked   ~ .tabs-2 .l-eco,
+#tab-jak:checked   ~ .tabs-2 .l-jak,
+#tab-proc:checked  ~ .tabs-2 .l-proc,
+#tab-kont:checked  ~ .tabs-2 .l-kont{
+  background:#ffffff !important;color:#0b3f7a !important;border:1px solid #d9e6ff;
+  border-bottom-color:#ffffff;border-radius:10px 10px 0 0
+}
+#tab-eco:checked   ~ .panels-2 #p-eco{display:block}
+#tab-jak:checked   ~ .panels-2 #p-jak{display:block}
+#tab-proc:checked  ~ .panels-2 #p-proc{display:block}
+#tab-kont:checked  ~ .panels-2 #p-kont{display:block}
+
+/* ====== DODATKOWA RESPONSYWNOŚĆ ====== */
+@media (max-width: 700px){
+  .hdr-wrap{flex-direction:column;align-items:flex-start !important;gap:10px;}
+  .usp-table{border-spacing:8px !important}
+  .usp-item{min-width:unset !important;width:100% !important}
+  .usp-img{width:40px !important}
+}
+@media (max-width: 880px){
+  .s1{flex-direction:column;align-items:stretch !important}
+}
+</style>
+
+<div class="au" style="max-width:1000px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08);font-family:Arial,Helvetica,sans-serif;color:#0f2942;">
+
+  <!-- HEADER: logo lewo + 3 podłużne prostokąty prawo -->
+  <div class="hdr-wrap" style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #eef2f8;gap:12px;">
+    <!-- Logo -->
+    <img src="https://markoooss.github.io/qrp-cdn/logo.png" alt="TurboShop"
+         style="max-width:200px;height:auto;display:block;">
+
+    <!-- USP: 3 poziome kapsułki -->
+    <table role="presentation" cellpadding="0" cellspacing="0" class="usp-table" style="border-collapse:separate;border-spacing:10px;">
+      <tr>
+        <!-- Gwarancja 24 mies. -->
+        <td valign="middle" class="usp-item" style="padding:0;">
+          <table role="presentation" cellpadding="0" cellspacing="0"
+                 style="border-collapse:collapse;background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;">
+            <tr>
+              <td style="padding:10px 10px 10px 12px;">
+                <img src="https://markoooss.github.io/qrp-cdn/13.png" alt="Gwarancja"
+                     class="usp-img" style="width:44px;height:auto;display:block;">
+              </td>
+              <td style="padding:8px 14px 8px 6px;white-space:nowrap;">
+                <div style="font-size:12px;font-weight:800;color:#0b3f7a;line-height:1.2;">Gwarancja</div>
+                <div style="font-size:11px;color:#555;line-height:1.2;">24 miesiące</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- Uszczelki gratis -->
+        <td valign="middle" class="usp-item" style="padding:0;">
+          <table role="presentation" cellpadding="0" cellspacing="0"
+                 style="border-collapse:collapse;background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;">
+            <tr>
+              <td style="padding:10px 10px 10px 12px;">
+                <img src="https://markoooss.github.io/qrp-cdn/16.png" alt="Uszczelki"
+                     class="usp-img" style="width:44px;height:auto;display:block;">
+              </td>
+              <td style="padding:8px 14px 8px 6px;white-space:nowrap;">
+                <div style="font-size:12px;font-weight:800;color:#0b3f7a;line-height:1.2;">Zestaw</div>
+                <div style="font-size:11px;color:#555;line-height:1.2;">Uszczelki gratis</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- Darmowa dostawa -->
+        <td valign="middle" class="usp-item" style="padding:0;">
+          <table role="presentation" cellpadding="0" cellspacing="0"
+                 style="border-collapse:collapse;background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;">
+            <tr>
+              <td style="padding:10px 10px 10px 12px;">
+                <img src="https://markoooss.github.io/qrp-cdn/15.png" alt="Dostawa"
+                     class="usp-img" style="width:44px;height:auto;display:block;">
+              </td>
+              <td style="padding:8px 14px 8px 6px;white-space:nowrap;">
+                <div style="font-size:12px;font-weight:800;color:#0b3f7a;line-height:1.2;">Dostawa</div>
+                <div style="font-size:11px;color:#555;line-height:1.2;">Gratis 24 h</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!-- /HEADER -->
+
+  <!-- ======= SEKCJA 1: IMG lewo + interaktywna prawa tabela ======= -->
+  <div class="s1" style="padding:16px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
+    <!-- IMG – zdjęcie z karty produktu -->
+    <div style="flex:1 1 420px;min-width:320px;">
+      <img src="https://pl.turbochargers-shop.com/environment/cache/images/500_500_productGfx_3052/Regenerowana-turbosprezarka-BorgWarner-KKK-53039700132-53039880132-53039700139-53039880139-53039700152-53039880152-53039700205-53039880205-53039700206-53039880206.webp?overlay=1"
+           alt="BorgWarner KKK BV43B 5303-970-0139/0152/0205/0206 – 03L253010C/016F/016J/019J/056A/056B"
+           style="width:100%;height:auto;border-radius:12px;display:block;">
+    </div>
+
+    <!-- PRAWA KOLUMNA – TABS -->
+    <div style="flex:1 1 520px;min-width:320px;">
+      <input type="radio" id="tab-opis"   name="tabs-1" checked>
+      <input type="radio" id="tab-pojazd" name="tabs-1">
+      <input type="radio" id="tab-oem"    name="tabs-1">
+
+      <div class="tabs-1" style="display:flex;background:#0b3f7a;border-radius:10px 10px 0 0;overflow:hidden;">
+        <label for="tab-opis"   class="l-opis"   style="flex:1;text-align:center;padding:12px 10px;cursor:pointer;font-weight:700;color:#fff;border-right:1px solid rgba(255,255,255,.15);">Opis</label>
+        <label for="tab-pojazd" class="l-pojazd" style="flex:1;text-align:center;padding:12px 10px;cursor:pointer;font-weight:700;color:#fff;border-right:1px solid rgba(255,255,255,.15);">Pojazd</label>
+        <label for="tab-oem"    class="l-oem"    style="flex:1;text-align:center;padding:12px 10px;cursor:pointer;font-weight:700;color:#fff;">Numer OEM</label>
+      </div>
+
+      <div class="panels-1" style="border:1px solid #d9e6ff;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
+        <!-- OPIS (pod produkt) -->
+        <div id="p-opis" class="panel" style="padding:14px;">
+          <div style="font-size:18px;font-weight:800;color:#0b3f7a;margin:2px 0 10px 0;">
+            Regenerowana turbosprężarka BorgWarner KKK BV43B • 5303-970-0139 / 0152 / 0205 / 0206
+          </div>
+          <table role="presentation" style="width:100%;border-collapse:collapse;font-size:13px;color:#222;">
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;width:36%;border-bottom:1px solid #eef3fb;">Stan</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">Regenerowana – 100% sprawna, gotowa do montażu</td>
+            </tr>
+            <tr>
+              <td style="padding:10px;font-weight:700;background:#fff;border-bottom:1px solid #eef3fb;">W zestawie</td>
+              <td style="padding:10px;background:#fff;border-bottom:1px solid #eef3fb;">Komplet nowych uszczelek + protokoły z maszyn</td>
+            </tr>
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;border-bottom:1px solid #eef3fb;">Gwarancja</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">24 miesiące</td>
+            </tr>
+            <tr>
+              <td style="padding:10px;font-weight:700;background:#fff;border-bottom:1px solid #eef3fb;">Aktuator</td>
+              <td style="padding:10px;background:#fff;border-bottom:1px solid #eef3fb;">Elektroniczny z czujnikiem</td>
+            </tr>
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;border-bottom:1px solid #eef3fb;">Geometria (VGT/VNT)</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">Tak – kalibrowana</td>
+            </tr>
+            <tr>
+              <td style="padding:10px;font-weight:700;background:#fff;">Rdzeń (CHRA)</td>
+              <td style="padding:10px;background:#fff;">Nowy</td>
+            </tr>
+          </table>
+
+          <div style="margin-top:10px;font-size:12px;color:#0f2942;background:#eef5ff;border:1px solid #d9e6ff;border-radius:8px;padding:8px 10px;">
+            Wysyłka: do 24 h • Kaucja zwrotna: 100&nbsp;EUR • Duża dostępność.
+          </div>
+        </div>
+
+        <!-- POJAZD (skrócona lista zastosowań) -->
+        <div id="p-pojazd" class="panel" style="padding:14px;">
+          <table role="presentation" style="width:100%;border-collapse:collapse;font-size:13px;color:#222;">
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;width:36%;border-bottom:1px solid #eef3fb;">Zastosowanie</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">
+                <br>Audi A3 (8P) 2.0 TDI (100/103kW - 136/140PS) CBAA CBAB CBD CFFA CFFB CLJ<br>
+<br>Skoda Yeti 2.0 TDI 103kW/140PS CFHC CBDB CLCB<br>
+<br>Volkswagen Eos 2.0 TDI (100/103kW - 136/140PS) CBAB CFFA CFFB<br>
+<br>Volkswagen Golf V PLUS (100/103kW - 136/140PS) CBDA CBDB CFHB CFHC<br>
+<br>Volkswagen Golf V PLUS 81kW/110PS CBDC CLCA<br>
+<br>Volkswagen Golf VI 2.0 TDI 81kW/110PS CBDC CFFA CLCA<br>
+<br>Volkswagen Golf VI 2.0 TDI (100/103kW - 136/140PS) CBAA CBAB CFFA CFFB CFHC CJAA CLCB<br>
+<br>Volkswagen Jetta V 2.0 TDI (100/103kW - 136/140PS) CBDA CBDB CBEA CJAA<br>
+<br>Volkswagen Passat B6 2.0 TDI 81kW/110PS CBDC<br>
+<br>Volkswagen Passat B6 2.0 TDI (100/103kW - 136/140PS) CBAA CBAB CFFA CFFB<br>
+<br>Volkswagen Passat B6 2.0 TDI 105kW/143PS CBAC<br>
+<br>Volkswagen Passat CC 2.0 TDI (100/103kW - 136/140PS) CBAA CBAB CFFA CFFB<br>
+<br>Volkswagen Passat CC 2.0 TDI 105kW/143PS CBAC<br>
+<br>Volkswagen Scirocco 2.0 TDI 103kW/140PS CBDB CFHC<br>
+<br>Volkswagen Tiguan I 2.0 TDI (100/103kW - 136/140PS) CBAA CBAB CFFA CFFB CLJA
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px;font-weight:700;background:#fff;border-bottom:1px solid #eef3fb;">Producent / marka</td>
+              <td style="padding:10px;background:#fff;border-bottom:1px solid #eef3fb;">BorgWarner / KKK</td>
+            </tr>
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;border-bottom:1px solid #eef3fb;">Silniki</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">CBAB, CBDB, CFFB, CFFD, CFCA (i pokrewne z listy BV43B)</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- OEM / OE -->
+        <div id="p-oem" class="panel" style="padding:14px;">
+          <table role="presentation" style="width:100%;border-collapse:collapse;font-size:13px;color:#222;">
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;width:36%;border-bottom:1px solid #eef3fb;">Numery producenta (KKK/BW)</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">
+                5303-970-0139 • 5303-988-0139 • 5303-970-0152 • 5303-988-0152 •
+                5303-970-0205 • 5303-988-0205 • 5303-970-0206 • 5303-988-0206
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px;font-weight:700;background:#fff;border-bottom:1px solid #eef3fb;">Numery OE (VAG)</td>
+              <td style="padding:10px;background:#fff;border-bottom:1px solid #eef3fb;">
+                03L253010C • 03L253016F • 03L253016J • 03L253019J • 03L253056A • 03L253056B
+              </td>
+            </tr>
+            <tr style="background:#f7f9fc;">
+              <td style="padding:10px;font-weight:700;border-bottom:1px solid #eef3fb;">Etykieta</td>
+              <td style="padding:10px;border-bottom:1px solid #eef3fb;">Tabliczka znamionowa na korpusie (BV43B)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======= /SEKCJA 1 ======= -->
+
+  <!-- ======= SYSTEM KAUCYJNY (stabilny grid tabelowy) ======= -->
+  <div style="padding:6px 16px 0 16px;">
+    <!-- Czerwony baner -->
+    <div style="background:#fee2e2;border:1px solid #fca5a5;border-radius:10px;padding:10px 14px;text-align:center;font-weight:900;color:#b91c1c;max-width:860px;margin:0 auto 12px auto;">
+      UWAGA: do ceny turbiny należy doliczyć <span style="text-decoration:underline;">kaucję w wysokości 100&nbsp;EUR</span>.
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:#0b3f7a;text-align:center;margin:6px 0 12px 0;">
+      Jak działa system kaucyjny?
+    </div>
+
+    <!-- 4 kroki -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:8px;">
+      <tr>
+        <td width="25%" valign="top" style="padding:0;">
+          <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;text-align:center;height:220px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#0b3f7a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">1</div>
+            <img src="https://markoooss.github.io/qrp-cdn/buy_icon.png" alt="" style="width:64px;height:auto;margin:6px auto 10px;display:block;">
+            <div style="font-weight:700;">Zakup</div>
+            <div style="font-size:12px;color:#555;margin-top:4px;">Cena turbiny + <strong>kaucja 100&nbsp;EUR</strong>.</div>
+          </div>
+        </td>
+        <td width="25%" valign="top" style="padding:0;">
+          <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;text-align:center;height:220px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#0b3f7a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">2</div>
+            <img src="https://markoooss.github.io/qrp-cdn/montage_icon.png" alt="" style="width:64px;height:auto;margin:6px auto 10px;display:block;">
+            <div style="font-weight:700;">Zwrot rdzenia</div>
+            <div style="font-size:12px;color:#555;margin-top:4px;">Odsyłasz rdzeń w kartonie po nowej turbinie.</div>
+          </div>
+        </td>
+        <td width="25%" valign="top" style="padding:0;">
+          <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;text-align:center;height:220px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#0b3f7a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">3</div>
+            <img src="https://markoooss.github.io/qrp-cdn/check_icon.png" alt="" style="width:64px;height:auto;margin:6px auto 10px;display:block;">
+            <div style="font-weight:700;">Weryfikacja</div>
+            <div style="font-size:12px;color:#555;margin-top:4px;">Kompletność, brak pęknięć/rozbiórki, brak spalenia.</div>
+          </div>
+        </td>
+        <td width="25%" valign="top" style="padding:0;">
+          <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;text-align:center;height:220px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#0b3f7a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;">4</div>
+            <img src="https://markoooss.github.io/qrp-cdn/kaucja_icon.png" alt="" style="width:64px;height:auto;margin:6px auto 10px;display:block;">
+            <div style="font-weight:700;">Zwrot kaucji</div>
+            <div style="font-size:12px;color:#555;margin-top:4px;">Szybki przelew tą samą metodą.</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- PRZYKŁADY -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:8px;margin-top:4px;">
+      <tr>
+        <td width="33.33%" valign="top" style="padding:0;">
+          <div style="background:#d1fae5;border:1px solid #a7f3d0;border-radius:10px;padding:12px;height:80px;">
+            <div style="font-weight:800;color:#065f46;margin-bottom:6px;">Przykład A — 100% zwrotu</div>
+            <div style="font-size:13px;color:#065f46;line-height:1.6;">Turbina 300 EUR + kaucja 100 EUR → po weryfikacji zwracamy <strong>100 EUR</strong>.</div>
+          </div>
+        </td>
+        <td width="33.33%" valign="top" style="padding:0;">
+          <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px;height:80px;">
+            <div style="font-weight:800;color:#9a3412;margin-bottom:6px;">Przykład B — częściowy zwrot</div>
+            <div style="font-size:13px;color:#9a3412;line-height:1.6;">Brak drobnego elementu (np. cięgno) → zwrot <strong>70–90 EUR</strong>.</div>
+          </div>
+        </td>
+        <td width="33.33%" valign="top" style="padding:0;">
+          <div style="background:#fee2e2;border:1px solid #fecaca;border-radius:10px;padding:12px;height:80px;">
+            <div style="font-weight:800;color:#b91c1c;margin-bottom:6px;">Przykład C — brak zwrotu</div>
+            <div style="font-size:13px;color:#b91c1c;line-height:1.6;">Rdzeń pęknięty, spalony lub rozebrany → <strong>kaucja przepada</strong>.</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Niebieskie notki -->
+    <div style="max-width:860px;margin:12px auto 6px auto;background:#eef5ff;border:1px solid #d9e6ff;border-radius:10px;padding:10px 14px;font-size:13px;color:#0f2942;">
+      <strong>Rekomendacja:</strong> kaucję pobieramy przez <strong>PayPal</strong> — najszybsze zwroty. Tytuł: numer zamówienia + imię i nazwisko + eBay.
+    </div>
+    <div style="max-width:860px;margin:6px auto 0 auto;background:#eef5ff;border:1px solid #d9e6ff;border-radius:10px;padding:10px 14px;font-size:13px;color:#0f2942;margin-bottom:30px;">
+      <strong>Termin:</strong> zwrot rdzenia do 14 dni roboczych. <strong>Stan:</strong> kompletny, bez pęknięć, niespalony, nierozebrany.
+    </div>
+  </div>
+  <!-- ======= /SYSTEM KAUCYJNY ======= -->
+
+  <!-- ======= SEKCJA 3: Dolne zakładki (ECO / JAK / PROCES / KONTAKT) ======= -->
+  <div style="padding:0 16px 16px 16px;">
+    <!-- radio -->
+    <input type="radio" id="tab-eco"  name="tabs-2" checked>
+    <input type="radio" id="tab-jak"  name="tabs-2">
+    <input type="radio" id="tab-proc" name="tabs-2">
+    <input type="radio" id="tab-kont" name="tabs-2">
+
+    <!-- etykiety -->
+    <div class="tabs-2" style="display:flex;background:#0b3f7a;border-radius:10px 10px 0 0;overflow:hidden;margin-top:8px;">
+      <label for="tab-eco"  class="l-eco"  style="flex:1;text-align:center;padding:12px 10px;color:#fff;cursor:pointer;font-weight:700;border-right:1px solid rgba(255,255,255,.15);">ECO</label>
+      <label for="tab-jak"  class="l-jak"  style="flex:1;text-align:center;padding:12px 10px;color:#fff;cursor:pointer;font-weight:700;border-right:1px solid rgba(255,255,255,.15);">Jak wybrać turbinę</label>
+      <label for="tab-proc" class="l-proc" style="flex:1;text-align:center;padding:12px 10px;color:#fff;cursor:pointer;font-weight:700;border-right:1px solid rgba(255,255,255,.15);">Proces regeneracji</label>
+      <label for="tab-kont" class="l-kont" style="flex:1;text-align:center;padding:12px 10px;color:#fff;cursor:pointer;font-weight:700;">Kontakt</label>
+    </div>
+
+    <!-- panele -->
+    <div class="panels-2" style="border:1px solid #d9e6ff;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">
+
+      <!-- ECO -->
+      <div id="p-eco" class="panel" style="padding:14px;">
+        <div style="text-align:center;font-size:18px;font-weight:800;color:#0b3f7a;margin:2px 0 12px 0;">Działamy nie ekonomicznie, a ekologicznie!</div>
+        <!-- rząd 1 -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="42%" valign="top" style="padding:6px 10px;">
+              <img src="https://markoooss.github.io/qrp-cdn/BEFORE (1).png" alt="" style="width:100%;height:auto;border-radius:10px;display:block;">
+              <div style="font-size:11px;color:#777;text-align:center;margin-top:6px;"></div>
+            </td>
+            <td width="58%" valign="top" style="padding:6px 10px;">
+              <div style="background:#f5f7fa;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin-bottom:22px;margin-top:22px;">
+                <div style="font-weight:800;color:#000;margin-bottom:4px;">NEW — produkcja nowej turbiny</div>
+                <div style="font-size:12px;color:#555;">Materiał: <strong>6 500 g</strong> • Energia: <strong>4 200 Wh</strong></div>
+                <div style="font-size:13px;color:#b30000;font-weight:800;">CO₂: 50 000 g</div>
+              </div>
+              <div style="background:#eaf8f3;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin-bottom:22px;">
+                <div style="font-weight:800;color:#0b5b4a;margin-bottom:4px;">REMAN — proces regeneracji</div>
+                <div style="font-size:12px;color:#0b5b4a;">Materiał: <strong>2 300 g</strong> • Energia: <strong>700 Wh</strong></div>
+                <div style="font-size:13px;color:#0b5b4a;font-weight:800;">CO₂: 12 500 g</div>
+              </div>
+              <div style="background:#dffcf1;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+                <div style="font-weight:800;color:#0d6b41;margin-bottom:4px;">SAVED — oszczędności środowiskowe</div>
+                <div style="font-size:12px;color:#0d6b41;">Materiał: <strong>−4 200 g</strong> • Energia: <strong>−3 500 Wh</strong></div>
+                <div style="font-size:13px;color:#0d6b41;font-weight:800;">CO₂: −37 500 g</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- rząd 2: pakowanie -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-top:8px;">
+          <tr>
+            <td width="58%" valign="top" style="padding:6px 10px;">
+              <div style="background:#f5f7fa;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin-bottom:52px;margin-top:52px;">
+                <div style="font-weight:700;">Papierowa taśma pakowa</div>
+                <div style="font-size:13px;color:#444;margin-top:4px;">Paczki zaklejamy <strong>taśmą papierową</strong> – redukujemy plastik.</div>
+              </div>
+              <div style="background:#f5f7fa;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin-bottom:52px;">
+                <div style="font-weight:700;">Własny eko-wypełniacz</div>
+                <div style="font-size:13px;color:#444;margin-top:4px;">Z odpadów kartonowych wytwarzamy <strong>wypełniacz amortyzujący</strong> – mniej odpadów, bezpieczniejsza wysyłka.</div>
+              </div>
+              <div style="background:#f5f7fa;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+                <div style="font-weight:700;">Minimalizacja plastiku</div>
+                <div style="font-size:13px;color:#444;margin-top:4px;">Usuwamy zbędne tworzywa – liczy się funkcja i ochrona towaru.</div>
+              </div>
+            </td>
+            <td width="42%" valign="top" style="padding:6px 10px;">
+              <div style="background:#fff;border:1px solid #eee;border-radius:12px;padding:8px;">
+                <img src="https://markoooss.github.io/qrp-cdn/ECO2.png" alt="Maszyna do wypełniacza" style="width:100%;height:auto;border-radius:10px;display:block;">
+              </div>
+              <div style="font-size:11px;color:#555;text-align:center;margin-top:6px;">Maszyna do wytwarzania wypełniacza z recyklingu kartonu</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /ECO -->
+
+      <!-- JAK WYBRAĆ TURBINĘ -->
+      <div id="p-jak" class="panel" style="padding:14px;">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="font-size:20px;font-weight:900;color:#0b3f7a;letter-spacing:.2px;">Jak sprawdzić, jaką turbinę wybrać?</div>
+          <div style="font-size:14px;color:#555;">5 pewnych sposobów – zaczynamy od numerów z tabliczki</div>
+        </div>
+        <!-- 3 zdjęcia -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:10px;margin:0 0 12px 0;">
+          <tr>
+            <td width="33.33%" valign="top" style="padding:0;">
+              <div style="background:#fff;border:1px solid #e9eef6;border-radius:10px;padding:8px;height:250px;display:flex;flex-direction:column;justify-content:flex-start;">
+                <div style="width:100%;height:170px;overflow:hidden;border-radius:8px;">
+                  <img src="https://markoooss.github.io/qrp-cdn/VIN1.jpeg" alt="Gdzie szukać tabliczki na turbinie" style="width:100%;height:100%;display:block;object-fit:cover;">
+                </div>
+                <div style="font-size:12px;color:#555;text-align:center;margin-top:6px;flex:1;display:flex;align-items:center;justify-content:center;">Miejsce tabliczki/numeru na korpusie.</div>
+              </div>
+            </td>
+            <td width="33.33%" valign="top" style="padding:0;">
+              <div style="background:#fff;border:1px solid #e9eef6;border-radius:10px;padding:8px;height:250px;display:flex;flex-direction:column;justify-content:flex-start;">
+                <div style="width:100%;height:170px;overflow:hidden;border-radius:8px;">
+                  <img src="https://markoooss.github.io/qrp-cdn/VIN2.jpg" alt="Przykładowa blaszka Garrett" style="width:100%;height:100%;display:block;object-fit:cover;">
+                </div>
+                <div style="font-size:12px;color:#555;text-align:center;margin-top:6px;flex:1;display:flex;align-items:center;justify-content:center;">Garrett: model, OE oraz numer wykonania.</div>
+              </div>
+            </td>
+            <td width="33.33%" valign="top" style="padding:0;">
+              <div style="background:#fff;border:1px solid #e9eef6;border-radius:10px;padding:8px;height:250px;display:flex;flex-direction:column;justify-content:flex-start;">
+                <div style="width:100%;height:170px;overflow:hidden;border-radius:8px;">
+                  <img src="https://markoooss.github.io/qrp-cdn/VIN3.JPG" alt="Przykładowa tabliczka BorgWarner/KKK" style="width:100%;height:100%;display:block;object-fit:cover;">
+                </div>
+                <div style="font-size:12px;color:#555;text-align:center;margin-top:6px;flex:1;display:flex;align-items:center;justify-content:center;">BorgWarner/KKK: OE, model (np. K26) i nr BW.</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- 5 bloków -->
+        <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;margin-bottom:10px;">
+          <div style="font-weight:900;color:#0b3f7a;font-size:16px;margin-bottom:6px;">1) Numer OE / OEM</div>
+          <div style="font-size:13px;color:#333;line-height:1.6;">Odczytaj z tabliczki na turbo (np. <strong>03G253014H</strong> / <strong>5303-988-0107</strong>). To najszybsza i najpewniejsza metoda doboru.</div>
+        </div>
+        <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;margin-bottom:10px;">
+          <div style="font-weight:900;color:#0b3f7a;font-size:16px;margin-bottom:6px;">2) VIN pojazdu</div>
+          <div style="font-size:13px;color:#333;line-height:1.6;">Wyślij nam VIN – sprawdzimy w katalogach producentów i potwierdzimy właściwy model.</div>
+        </div>
+        <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;margin-bottom:10px;">
+          <div style="font-weight:900;color:#0b3f7a;font-size:16px;margin-bottom:6px;">3) Kod silnika</div>
+          <div style="font-size:13px;color:#333;line-height:1.6;">Np. <strong>BKD</strong>, <strong>BLS</strong>, <strong>CFHC</strong>. Po kodzie dobierzemy wariant mocy i geometrię.</div>
+        </div>
+        <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;margin-bottom:10px;">
+          <div style="font-weight:900;color:#0b3f7a;font-size:16px;margin-bottom:6px;">4) Dane auta</div>
+          <div style="font-size:13px;color:#333;line-height:1.6;">Marka/model/rocznik, pojemność, moc w kW/HP – pozwala odsiać bliźniacze wersje.</div>
+        </div>
+        <div style="background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;">
+          <div style="font-weight:900;color:#0b3f7a;font-size:16px;margin-bottom:6px;">5) Zdjęcia starej turbiny</div>
+          <div style="font-size:13px;color:#333;line-height:1.6;">Tabliczka znamionowa + złącza oleju/powietrza. Zweryfikujemy łudząco podobne wersje.</div>
+        </div>
+        <!-- Notka + CTA -->
+        <div style="background:#eef5ff;border:1px solid #d9e6ff;border-radius:10px;padding:10px 14px;max-width:860px;margin:12px auto 0 auto;font-size:13px;color:#0f2942;text-align:center;">
+          Nie masz numeru OE? <strong>Wyślij VIN lub zdjęcia</strong> – dobierzemy model i potwierdzimy dostępność.
+        </div>
+        <div style="text-align:center;margin-top:16px;">
+          <div style="font-size:15px;font-weight:700;color:#b30000;margin-bottom:10px;">❓ Nie wiesz jak wybrać turbinę?</div>
+          <a href="mailto:info@turbochargers-shop.com" 
+             style="display:inline-block;background:#0b3f7a;color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:12px 22px;border-radius:999px;">
+            📩 Napisz do nas – pomożemy!
+          </a>
+        </div>
+      </div>
+      <!-- /JAK -->
+
+      <!-- PROCES REGENERACJI (granatowe napisy) -->
+      <div id="p-proc" class="panel" style="padding:14px;">
+        <div style="font-size:16px;font-weight:800;color:#0b3f7a;margin-bottom:8px;text-align:center;">
+          Proces regeneracji – krok po kroku
+        </div>
+        <div style="display:flex;flex-wrap:wrap;margin:0 -8px;">
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">1) Diagnostyka wstępna</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Rozbiórka, mycie, inspekcja korpusu i kierownic VNT. Oceniamy luzy, zużycie i pęknięcia.
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">2) Obróbka / czyszczenie</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Czyszczenie ultradźwiękowe, piaskowanie niskociśnieniowe, przywrócenie kanałów przepływu.
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">3) Wymiana podzespołów</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Nowy rdzeń (CHRA), komplet uszczelnień/łożysk, regeneracja lub wymiana VNT i aktuatora.
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">4) Wyważanie</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Balansowanie na niskich i wysokich obrotach – dołączamy protokół z maszyny.
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">5) Kalibracja VNT / aktuatora</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Ustawienie przepływu, pozycjonowanie łopatek i test sterownika (elektr./pneum.).
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;padding:8px;">
+            <div style="background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:16px;height:160px;">
+              <div style="font-weight:800;margin-bottom:6px;color:#0b3f7a;">6) Kontrola jakości i wysyłka</div>
+              <div style="font-size:13px;color:#333;line-height:1.6;">
+                Test szczelności, komplet <strong>nowych uszczelek</strong>, instrukcja, bezpieczne pakowanie 24 h.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /PROCES REGENERACJI -->
+
+      <!-- KONTAKT -->
+      <div id="p-kont" class="panel" style="padding:14px;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <div style="flex:1 1 240px;min-width:220px;background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;text-align:center;">
+            <div style="font-weight:800;color:#004d99;">📧 E-mail</div>
+            <div style="font-size:14px;font-weight:700;color:#0f2942;margin-top:4px;word-break:break-word;">info@turbochargers-shop.com</div>
+            <div style="font-size:12px;color:#555;">Odpowiadamy zwykle w 1–3 h</div>
+          </div>
+          <div style="flex:1 1 240px;min-width:220px;background:#f7f9fc;border:1px solid #d9e6ff;border-radius:12px;padding:16px;text-align:center;">
+            <div style="font-weight:800;color:#004d99;">📦 Adres wysyłki</div>
+            <div style="font-size:12px;color:#0f2942;margin-top:4px;line-height:1.5;">TURBOSHOP POLSKA<br>ul. Bratnia 8, 56-040 Oleśnica</div>
+          </div>
+        </div>
+        <div style="max-width:860px;margin:12px auto 0 auto;background:#eef5ff;border:1px solid #d9e6ff;border-radius:10px;padding:10px 14px;font-size:12px;color:#0f2942;text-align:center;">
+          Potrzebujesz etykiety zwrotnej? Napisz do nas – wyślemy ją e-mailem.
+        </div>
+      </div>
+      <!-- /KONTAKT -->
+
+    </div>
+  </div>
+
+  <!-- STOPKA CTA -->
+  <div style="padding:20px 16px;background:#0b3f7a;color:#fff;text-align:center;">
+    <div style="font-weight:900;font-size:18px;letter-spacing:.3px;">Zobacz pozostałe aukcje</div>
+    <a href="https://www.ebay.pl/usr/twoj-sklep" style="display:inline-block;margin-top:10px;background:#ffffff;color:#0b3f7a;text-decoration:none;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px;border:2px solid #ffffff;">🛒 Przejdź do profilu</a>
+  </div>
+</div>
+<!-- ========== /SZABLON V3 ========== -->
